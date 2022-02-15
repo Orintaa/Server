@@ -2,15 +2,18 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
-    "test": " node . NODE_ENV=production"
+    "server": "NODE_ENV=production node .",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.js --watchAll --passWithNoTests"
   },
   "keywords": [],
   "author": "Orinta <orinta.strac@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^27.5.0",
     "nodemon": "^2.0.15"
   }
 }

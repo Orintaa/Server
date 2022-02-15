@@ -1,5 +1,5 @@
-// const config = require('./config.js');
-const server = require('./lib/server.js');
+
+import { server } from './lib/server.js';
 /*
 jeigu kodas pasileidzia is programuotojo pc, tai:
 [projekto pavadinimas] [aplinkos pavadinimas] [default kalba]
@@ -43,4 +43,4 @@ app.init = () => {
 
 app.init();
 
-module.exports = app;
+export { app };

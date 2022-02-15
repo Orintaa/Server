@@ -5,7 +5,12 @@ environments.dev = {
     envName: 'dev',
     httpPort: 3001,
     defaultLang: 'en',
-    password: 'demo-password'
+    cacheTime: {
+        default: 10,
+        css: 100,
+        js: 100,
+    },
+    password: 'demo-password',
 };
 
 environments.production = {
@@ -13,6 +18,11 @@ environments.production = {
     envName: 'production',
     httpPort: 4000,
     defaultLang: 'lt',
+    cacheTime: {
+        default: 1000,
+        css: 10000,
+        js: 10000,
+    },
     password: 'hjfskdjflsak'
 };
 
@@ -21,6 +31,11 @@ environments.test = {
     envName: 'test',
     httpPort: 5000,
     defaultLang: 'en',
+    cacheTime: {
+        default: 100,
+        css: 100,
+        js: 100,
+    },
     password: 'hjfsak'
 };
 
@@ -38,4 +53,4 @@ const exportableEnvName = typeof environments[currectEnv] === 'object' ? currect
 // NODE_ENV=kjsdj node . -> environments.dev
 // node . -> environments.dev
 
-module.exports = environments[exportableEnvName];
+export default environments[exportableEnvName];
